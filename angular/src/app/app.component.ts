@@ -5,7 +5,6 @@ import { catchError, retry } from 'rxjs/operators';
 
 //
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,6 +12,8 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   title = 'cors-issues';
+  data = [];
+  id = 3;
 
   // products: Product[] = [];
   //theDataSource$: Observable<Product[]>;
@@ -29,43 +30,43 @@ export class AppComponent implements OnInit {
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
-
-
   }
   // Get request
   getItems() {
     return this.http
       .get<any>('/api/OrderManagement')
-      .subscribe((response) => console.log('response is ', response));
+      .subscribe((response) => (this.data = response));
   }
 
-  // Post request, please update 
+  // Post request, please update
   addItems() {
     return this.http
       .post<any>('/api/OrderManagement', {
-        id: 677278,
-        uuid: '',
-        accountId: 275638,
-        orderDate: '5/11/22',
-        orderStatus: 'ordered',
-        orderName: 'proxyConfirm',
-        downloadLink: '',
-        imageOutputFormat: '',
-        notificationEmailAddress: 'proxy@example2.com',
+        id: this.id + Math.floor(Math.random() * 100),
+        uuid:
+          '3fa85f64-5717-4562-b3fc-2c963f66a6' +
+          Math.floor(Math.random() * 100),
+        accountId: 1,
+        orderDate: 'string',
+        orderStatus: 'string',
+        orderName: 'string',
+        downloadLink: 'string',
+        imageOutputFormat: 'string',
+        notificationEmailAddress: 'string',
         continuousIntegration: true,
         continuousDelivery: true,
-        release: true,
-        edition: '',
-        version: '',
-        arch: '',
-        lcid: '',
-        optionalFeaturestring: '',
-        appxPackagesstring: 'testing',
-        windowsDefaultAccount: 'fathe',
-        windowsDefaultPassword: 'hsuusu',
-        customRegistryKeys: ['testing it'],
-        applicationUID: ['535355test'],
-        driversUID: ['testing'],
+        release: 'string',
+        edition: 'string',
+        version: 'string',
+        arch: 'string',
+        lcid: 'string',
+        optionalFeaturestring: 'string',
+        appxPackagesstring: 'string',
+        windowsDefaultAccount: 'string',
+        windowsDefaultPassword: 'string',
+        customRegistryKeys: ['string'],
+        applicationUID: ['string'],
+        driversUID: ['string'],
       })
       .subscribe((data) => {
         console.log(data);
