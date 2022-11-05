@@ -1,5 +1,25 @@
 # CorsIssues
 
+To run this project 
+
+Clone the repo and then run 
+
+```js
+npm install 
+```
+After which, run 
+
+```js
+npm start 
+```
+
+The proxy config is where the configuration  for the proxy is located 
+
+In the package.json file, you see the  # start command
+
+After clicking the post data, please refresh to see the data sent from the backend 
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
 
 ## Development server
