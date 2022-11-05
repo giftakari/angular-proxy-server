@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.4
 
 ## PART 01 - BUILD APP
-FROM --platform=$BUILDPLATFORM node:17.0.1-bullseye-slim AS build
+FROM node:17.0.1-bullseye-slim AS build
 WORKDIR /project
 RUN npm install -g @angular/cli
 COPY ./angular/package.json ./angular/package-lock.json ./
