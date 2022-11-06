@@ -3,6 +3,7 @@
 ## PART 01 - BUILD APP
 FROM node:17.0.1-bullseye-slim AS build
 WORKDIR /project
+RUN npm install -g npm@8.19.3
 RUN npm install -g @angular/cli
 COPY ./angular/package.json ./angular/package-lock.json ./
 RUN npm install
